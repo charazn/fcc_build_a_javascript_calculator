@@ -105,6 +105,7 @@ $(document).ready(function(){
 	var memory = '0';
 	var answer = '';
 	var answerRounded = '';
+	var kslastchar = '';
 	totaldiv.text('0');
   keystrokesdiv.text('0');
 
@@ -130,16 +131,30 @@ $(document).ready(function(){
 
   $('#numbers > a').not('#decimal').click(function(){
 		// console.log('keystrokes: '+keystrokes);
-		// console.log(answer);
-		// console.log(typeof(answer));
-		if (keystrokes.indexOf('=') === -1) {
-			// console.log('keystrokes does not contain =');
+		kslastchar = keystrokes.substr(-1);
+		if (number.length === 0 && keystrokes.length === 0) {
 			number += $(this).text();
 			keystrokes += $(this).text();
-		} else {
-			// console.log('keystrokes contains =');
-			number = $(this).text();
-			keystrokes = $(this).text();
+		} else if (number.length === 0 && keystrokes.length !== 0) {
+			if (kslastchar === '+' || kslastchar === '-' || kslastchar === '/' || kslastchar === '*') {
+				// Cannot enter zero as first digit of number if
+				if ($(this).text() !== '0') {
+					if (keystrokes.indexOf('=') === -1) {
+						// console.log('keystrokes does not contain =');
+						number += $(this).text();
+						keystrokes += $(this).text();
+					} else {
+						// console.log('keystrokes contains =');
+						number = $(this).text();
+						keystrokes = $(this).text();
+					}
+				} else {
+					return number;
+				}
+			}
+		} else if (number.length !== 0 && keystrokes.length !== 0) {
+			number += $(this).text();
+			keystrokes += $(this).text();
 		}
 		// console.log('number: '+number);
 		// console.log('keystrokes after the = sign check: '+keystrokes);
@@ -174,7 +189,7 @@ $(document).ready(function(){
 			number = '';
 			if (keystrokes.indexOf('=') === -1) {
 				// console.log('keystrokes does not contain = sign');
-				var kslastchar = keystrokes.slice(-1);
+				kslastchar = keystrokes.substr(-1);
 				if (kslastchar === '+' || kslastchar === '-' || kslastchar === '/' || kslastchar === '*') {
 					// console.log('keystrokes without operator: '+keystrokes);
 					testKeystrokesLength(keystrokes);
@@ -198,7 +213,8 @@ $(document).ready(function(){
 			number = keystrokes = '0.';
 		} else {
 			if (keystrokes.indexOf('=') === -1) {
-				if (keystrokes.substr(-1) === '+' || keystrokes.substr(-1) === '-' || keystrokes.substr(-1) === '*' || keystrokes.substr(-1) === '/') {
+				kslastchar = keystrokes.substr(-1);
+				if (kslastchar === '+' || kslastchar === '-' || kslastchar === '/' || kslastchar === '*') {
 					number = '0.';
 					keystrokes += number;
 				} else {
