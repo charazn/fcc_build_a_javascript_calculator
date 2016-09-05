@@ -172,7 +172,6 @@ $(document).ready(function(){
 			testKeystrokesLength(keystrokes);
 		} else {
 			number = '';
-			totaldiv.text(operator);
 			if (keystrokes.indexOf('=') === -1) {
 				// console.log('keystrokes does not contain = sign');
 				var kslastchar = keystrokes.slice(-1);
@@ -180,11 +179,13 @@ $(document).ready(function(){
 					// console.log('keystrokes without operator: '+keystrokes);
 					testKeystrokesLength(keystrokes);
 				} else {
+					totaldiv.text(operator);
 					keystrokes += operator;
 					// console.log('keystrokes + operator: '+keystrokes);
 					testKeystrokesLength(keystrokes);
 				}
 			} else {
+				totaldiv.text(operator);
 				// console.log('keystrokes contains = sign');
 				keystrokes = answerRounded + operator;
 				testKeystrokesLength(keystrokes);
@@ -227,12 +228,13 @@ $(document).ready(function(){
 				keystrokes = keystrokes.slice(0, -number.length);
 				// console.log('keystrokes after slice: '+keystrokes);
 				number = '';
-			} else {
-				// console.log('there is no number entered');
-				if (keystrokes.substr(-1) === '+' || keystrokes.substr(-1) === '-' || keystrokes.substr(-1) === '*' || keystrokes.substr(-1) === '/') {
-					keystrokes = keystrokes.slice(0, -1);
-				}
 			}
+			// } else {
+				console.log('there is no number entered');
+			// 	if (keystrokes.substr(-1) === '+' || keystrokes.substr(-1) === '-' || keystrokes.substr(-1) === '*' || keystrokes.substr(-1) === '/') {
+			// 		keystrokes = keystrokes.slice(0, -1);
+			// 	}
+			// }
 			totaldiv.text('0');
 			testKeystrokesLength(keystrokes);
 		} else if (keystrokes = 1) {
