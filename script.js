@@ -247,7 +247,8 @@ $(document).ready(function(){
 					// console.log('keystrokes after slice: '+keystrokes);
 					number = '';
 				} else {
-					number = keystrokes = '';
+          number = '';
+					keystrokes = '0';
 				}
 			}
 			totaldiv.text('0');
