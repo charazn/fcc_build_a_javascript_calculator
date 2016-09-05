@@ -1,0 +1,201 @@
+/*body, div, a {
+  padding: 0;
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#calculator {
+	background-color: #999;
+	width: 310px;
+	height: 460px;
+	border: 3px black solid;
+	margin: 10px auto;
+	padding: 5px;
+	border-radius: 10px;
+}
+
+#total {
+  height: 70px;
+  width: 300px;
+  margin:auto;
+  background-color:white;
+  margin-bottom: 5px;
+  text-align: right;
+  font-size: 60px;
+  padding: 0 5px;
+}
+
+#numbers, #operators {
+	margin: auto;
+}
+
+#operators a {
+	display: block;
+	width: 46px;
+	height: 45px;
+	float: left;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	font-size: 39px;
+	padding: 2px;
+	margin: 5px 6px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+	background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+	border-radius: 10px;
+}
+
+#numbers a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	float: left;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	font-size: 32pt;
+	padding: 10px;
+	margin: 5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+	background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+	border-radius: 10px;
+}
+
+a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#EDEDED));
+  background: -moz-linear-gradient(top,  #DCDCDC,  #EDEDED);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DCDCDC', endColorstr='#EDEDED');
+}
+
+#side {
+	width: 49px;
+	float: right;
+}
+
+#side a {
+	width: 40px;
+	height: 30px;
+	float: right;
+	font-size: 20px;
+	padding: 5px;
+	margin: 5px;
+}
+
+a#equals {
+	padding-top: 50px;
+	height: 100px;
+}*/
+
+
+/*CSS from Build A Calculator 2*/
+body, div, a {
+    padding:0;
+    margin:0;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+#calculator {
+	background-color: #90a6da; /*#999*/
+	width: 310px;
+	height: 501px;
+	border: 3px black solid;
+	margin: 10px auto;
+	padding: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#calculator a {
+	display: block;
+  float: left;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  background: -moz-linear-gradient(top, #EDEDED, #DCDCDC);
+  background: -webkit-gradient(linear, left top, left bottom, from(#EDEDED), to(#DCDCDC));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EDEDED', endColorstr='#DCDCDC');
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+  border-radius: 10px;
+  color: black;
+}
+
+#numbers, #operators {
+	margin: auto;
+}
+
+#operators a {
+	width: 46px;
+	height: 45px;
+	font-size: 39px;
+	padding: 0 2px 4px 2px;
+	margin: 5px 6.5px 5px 5px;
+}
+
+#numbers a {
+	width: 50px;
+	height: 50px;
+	font-size: 32px;
+	padding: 15px 10px 5px 10px;
+	margin: 6px;
+}
+
+#numbers a#zero {
+  width: 132px;
+}
+
+#total {
+  height: 70px;
+  width: 300px;
+  margin:auto;
+  background-color: white;
+  margin-bottom: 5px;
+  text-align: right;
+  font-size: 60px;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+#keystrokes {
+  height: 30px;
+  width: 300px;
+  margin: auto;
+  background-color: #ccc; /*#d3d3d3;*/
+  margin-bottom: 5px;
+  text-align: right;
+  font-size: 20px;
+  padding: 5px 5px 0 0;
+  border-radius: 5px;
+}
+
+#side {
+	width: 49px;
+	float: right;
+}
+
+#side a {
+	width: 40px;
+	height: 40px;
+	float: right;
+	font-size: 24px;
+	padding: 10px 5px 0 5px;
+	margin: 5px;
+}
+
+#side a#clear {
+  background: #FFE600;
+}
+
+#side a#clearall {
+  background: #FFA500; /*#ee0000;*/
+}
+
+#side a#equals {
+  margin-top: 110px;
+  padding-top: 62px;
+	height: 91px;
+  background: #009a00;
+}
