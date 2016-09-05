@@ -219,12 +219,27 @@ $(document).ready(function(){
 	});
 
   $('#side a#clear').click(function(){
-		// console.log('number: '+number);
-		// console.log('keystrokes: '+keystrokes);
-		keystrokes = keystrokes.slice(0, -number.length);
-		number = '';
-		totaldiv.text('0');
-		testKeystrokesLength(keystrokes);
+		if (keystrokes.length > 1) {
+			// console.log('number: '+number);
+			// console.log('keystrokes before slice: '+keystrokes);
+			if (number) {
+				// console.log('there is a number entered');
+				keystrokes = keystrokes.slice(0, -number.length);
+				// console.log('keystrokes after slice: '+keystrokes);
+				number = '';
+			} else {
+				// console.log('there is no number entered');
+				if (keystrokes.substr(-1) === '+' || keystrokes.substr(-1) === '-' || keystrokes.substr(-1) === '*' || keystrokes.substr(-1) === '/') {
+					keystrokes = keystrokes.slice(0, -1);
+				}
+			}
+			totaldiv.text('0');
+			testKeystrokesLength(keystrokes);
+		} else if (keystrokes = 1) {
+			number = keystrokes = '';
+			totaldiv.text('0');
+			keystrokesdiv.text('0');
+		}
   });
 
   $('#side a#clearall').click(function(){
