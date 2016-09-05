@@ -240,17 +240,16 @@ $(document).ready(function(){
 			// console.log('number: '+number);
 			// console.log('keystrokes before slice: '+keystrokes);
 			if (number) {
-				// console.log('there is a number entered');
-				keystrokes = keystrokes.slice(0, -number.length);
-				// console.log('keystrokes after slice: '+keystrokes);
-				number = '';
+				if (keystrokes.indexOf('=') === -1) {
+					// console.log('there is a number entered');
+					// console.log('there is no equal sign in the keystrokes');
+					keystrokes = keystrokes.slice(0, -number.length);
+					// console.log('keystrokes after slice: '+keystrokes);
+					number = '';
+				} else {
+					number = keystrokes = '';
+				}
 			}
-			// } else {
-				console.log('there is no number entered');
-			// 	if (keystrokes.substr(-1) === '+' || keystrokes.substr(-1) === '-' || keystrokes.substr(-1) === '*' || keystrokes.substr(-1) === '/') {
-			// 		keystrokes = keystrokes.slice(0, -1);
-			// 	}
-			// }
 			totaldiv.text('0');
 			testKeystrokesLength(keystrokes);
 		} else if (keystrokes = 1) {
